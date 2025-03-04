@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C++ programlama diline giriş, temel kavramlar ve ilk program örneği. Başlangıç seviyesi için ideal rehber.">
+    <meta name="keywords" content="C++, programlama, yazılım, başlangıç, coding">
+    <meta property="og:title" content="C++ ile İlk Adımlar">
+    <meta property="og:description" content="C++ programlama diline giriş ve temel kavramlar hakkında kapsamlı rehber.">
+    <title>C++ ile İlk Adımlar | Eyüp Aktaş</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <!-- ...existing nav structure... -->
+    </nav>
+
+    <div class="progress-bar">
+        <div class="progress" id="readingProgress"></div>
+    </div>
+
+    <main class="blog-post">
+        <article>
+            <header class="blog-header">
+                <h1>C++ ile İlk Adımlar</h1>
+                <div class="blog-meta">
+                    <span>15 Ocak 2024</span>
+                    <span>5 dk okuma</span>
+                    <span>Programlama</span>
+                </div>
+            </header>
+
+            <div class="blog-content">
+                <div class="post-content">
+                    <p>Merhaba! Bu yazımda C++ programlama diline ilk adımımı nasıl attığımı ve temel kavramları nasıl öğrendiğimi anlatacağım.</p>
+
+                    <h2>İlk Program: Hello World</h2>
+                    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout << "Hello World!" << endl;
+    return 0;
+}</code></pre>
+
+                    <p>Bu basit program, C++'ın temel yapı taşlarını gösteriyor. Şimdi bu kodun her bir parçasını inceleyelim...</p>
+                    
+                    <h2>Değişkenler ve Veri Tipleri</h2>
+                    <p>C++'da en çok kullandığımız veri tipleri şunlardır:</p>
+                    <ul>
+                        <li>int: Tam sayılar</li>
+                        <li>float: Ondalıklı sayılar</li>
+                        <li>char: Karakterler</li>
+                        <li>string: Metinler</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="share-buttons">
+                <button class="share-button" onclick="share('twitter')">Twitter'da Paylaş</button>
+                <button class="share-button" onclick="share('linkedin')">LinkedIn'de Paylaş</button>
+            </div>
+
+            <section class="related-posts">
+                <h2>Benzer Yazılar</h2>
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <h3>Algoritma Analizi</h3>
+                        <p>Big O notasyonu ve algoritma karmaşıklığı...</p>
+                        <a href="algoritma-analizi.html">Devamını Oku →</a>
+                    </article>
+                    <!-- Diğer benzer yazılar -->
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <script>
+        // Okuma ilerlemesi için script
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('readingProgress').style.width = scrolled + '%';
+        });
+
+        // Paylaşım fonksiyonu
+        function share(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            
+            const urls = {
+                twitter: `https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+                linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+            };
+            
+            window.open(urls[platform], '_blank');
+        }
+    </script>
+</body>
+</html>
